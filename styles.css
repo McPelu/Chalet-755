@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    padding-bottom: 60px;
 }
 
 header {
@@ -111,7 +112,6 @@ footer {
     background-color: #333;
     color: white;
 }
-
 .tab-content {
     display: none;
     padding: 20px;
@@ -119,10 +119,10 @@ footer {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 
-    /* BELANGRIJK */
-    max-height: none;
-    overflow: visible;
-    min-height: 300px;
+    /* NIEUW */
+    min-height: 500px;   /* maak het blok hoger */
+    max-width: 900px;    /* niet over hele pagina */
+    margin: 20px auto;   /* netjes gecentreerd */
 }
 
 .tab-content.active {
