@@ -1,0 +1,269 @@
+/* Algemene instellingen */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #2196F3;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+h2 {
+    color: #333;
+}
+
+/* Section Styling */
+section {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Form Styling */
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+}
+
+.input-group input {
+    width: 200px; /* Set the input field width */
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-error {
+    border-color: red;
+}
+
+#total-cost {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Tab styling */
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.tab-button.active {
+    background-color: #333;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Form container styling */
+.form-container {
+    margin-top: 20px;
+}
+
+.form-container input, .form-container button {
+    margin-bottom: 10px;
+}
+
+.form-container label {
+    display: block;
+    margin-top: 10px;
+}
+
+.form-container button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+.form-container button:hover {
+    background-color: #45a049;
+}
+
+/* Kosteninformatie aan de rechterkant */
+/* Kosteninformatie aan de rechterkant / prijslijst */
+.cost-info {
+    max-width: 500px;       /* bepaalt de breedte van het blok */
+    margin: 20px auto;      /* centreert het blok */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cost-info table {
+    width: 100%;           /* tabel vult het hele blok */
+    border-collapse: collapse;
+}
+
+.cost-info table td,
+.cost-info table th {
+    padding: 8px;
+    text-align: left;      /* alles netjes links */
+    vertical-align: top;   /* kolommen netjes uitlijnen */
+}
+
+.cost-info table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.cost-info table tr {
+    border-bottom: 1px solid #ddd;
+}
+/* Algemene formulier elementen */
+input[type="number"], input[type="date"] {
+    padding: 8px;
+    font-size: 14px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Reservering en prijzen */
+h2, h3 {
+    color: #333;
+}
+
+/* Maak de tabbladen zichtbaar met flexbox voor betere layout */
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Styling voor startdatum input en andere formuliervelden */
+#start-date {
+    width: 200px; /* Breedte van de startdatum input */
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+#num-weeks, #num-persons {
+    width: 200px; /* Breedte van de invoervelden voor weken en personen */
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+#calculate-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+}
+
+#calculate-btn:hover {
+    background-color: #45a049;
+}
+Start versie
