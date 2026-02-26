@@ -270,4 +270,30 @@ footer {
 #calculate-btn:hover {
     background-color: #45a049;
 }
+/* Zorg dat elk label + input bij elkaar hoort */
+.guest-info label {
+    display: inline-block;  /* Label naast input mogelijk maken */
+    width: 150px;           /* Breedte van label */
+    margin-right: 10px;     /* Spacing tussen label en input */
+    text-align: right;      /* Tekst uitlijnen naar rechts */
+    vertical-align: middle; /* Midden uitlijnen met input */
+}
 
+/* Input naast label */
+.guest-info input,
+.guest-info select {
+    display: inline-block;
+    width: 200px;           /* Breedte van het invoerveld */
+    margin-bottom: 10px;    /* Ruimte tussen regels */
+}
+
+/* Voor datums specifiek */
+.guest-info input[type="date"] {
+    width: 200px;  /* evt aanpassen zodat het netjes past */
+}
+
+/* Optioneel: elk veld op een nieuwe regel houden */
+.guest-info h4,
+.guest-info label {
+    margin-top: 5px;
+}
