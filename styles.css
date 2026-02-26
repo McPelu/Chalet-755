@@ -118,8 +118,8 @@ footer {
     border-top: 1px solid #ddd;
     background-color: #fff;
     #kosten.tab-content {
-    max-height: none; /* of auto */
-    overflow-y: auto;
+    max-height: auto; /* of auto */
+    overflow-y: visible;
     
 }
 
