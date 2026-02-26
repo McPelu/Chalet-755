@@ -117,10 +117,8 @@ footer {
     padding: 20px;
     border-top: 1px solid #ddd;
     background-color: #fff;
-    #kosten.tab-content {
-    max-height: 400px; /* of auto */
+    max-height: 400px;
     overflow-y: auto;
-    
 }
 
 .tab-content.active {
@@ -268,4 +266,4 @@ footer {
 #calculate-btn:hover {
     background-color: #45a049;
 }
-Start versie
+
