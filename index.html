@@ -28,7 +28,7 @@
             padding: 20px;
             border-top: 1px solid #ddd;
             background-color: #fff;
-            max-height: 700px;
+            max-height: 400px;
             overflow-y: auto;
         }
         .tab-content.active {
@@ -333,22 +333,174 @@
     </div>
 <div id="contact" class="tab-content">
     <h2>Contactformulier / Reservering</h2>
-    <div class="form-container">
-        <label for="guest-name">Naam:</label>
-        <input type="text" id="guest-name" placeholder="Jouw naam">
+    <form action="mailto:s.pelupessy@home.nl" method="post" enctype="text/plain">
+        <!-- Huurder Informatie (max 4 personen) -->
+      <div class="guests-form">
+    <div class="guest" id="guest1">
+        <h3>Huurder 1</h3>
+        <label for="gender1">Geslacht:</label>
+        <select id="gender1">
+            <option value="man">Man</option>
+            <option value="vrouw">Vrouw</option>
+        </select>
 
-        <label for="guest-email">E-mail:</label>
-        <input type="email" id="guest-email" placeholder="Jouw e-mail">
+        <label for="first-name1">Voornaam:</label>
+        <input type="text" id="first-name1">
 
-        <label for="guest-phone">Telefoonnummer:</label>
-        <input type="tel" id="guest-phone" placeholder="Telefoonnummer">
+        <label for="last-name1">Achternaam:</label>
+        <input type="text" id="last-name1">
 
-        <label for="guest-message">Bericht / Opmerkingen:</label>
-        <textarea id="guest-message" rows="5" placeholder="Typ hier je bericht..."></textarea>
+        <label for="dob1">Geboortedatum:</label>
+        <input type="date" id="dob1">
 
-        <button id="send-btn">Verstuur</button>
-        <p id="send-status"></p>
+        <label for="address1">Adres:</label>
+        <input type="text" id="address1">
+
+        <label for="postcode1">Postcode:</label>
+        <input type="text" id="postcode1">
+
+        <label for="city1">Woonplaats:</label>
+        <input type="text" id="city1">
     </div>
+
+    <div class="guest" id="guest2">
+        <h3>Huurder 2</h3>
+        <label for="gender1">Geslacht:</label>
+        <select id="gender1">
+            <option value="man">Man</option>
+            <option value="vrouw">Vrouw</option>
+        </select>
+
+        <label for="first-name1">Voornaam:</label>
+        <input type="text" id="first-name1">
+
+        <label for="last-name1">Achternaam:</label>
+        <input type="text" id="last-name1">
+
+        <label for="dob1">Geboortedatum:</label>
+        <input type="date" id="dob1">
+
+        <label for="address1">Adres:</label>
+        <input type="text" id="address1">
+
+        <label for="postcode1">Postcode:</label>
+        <input type="text" id="postcode1">
+
+        <label for="city1">Woonplaats:</label>
+        <input type="text" id="city1">
+    </div>
+
+    <div class="guest" id="guest3">
+        <h3>Huurder 3</h3>
+        <label for="gender1">Geslacht:</label>
+        <select id="gender1">
+            <option value="man">Man</option>
+            <option value="vrouw">Vrouw</option>
+        </select>
+
+        <label for="first-name1">Voornaam:</label>
+        <input type="text" id="first-name1">
+
+        <label for="last-name1">Achternaam:</label>
+        <input type="text" id="last-name1">
+
+        <label for="dob1">Geboortedatum:</label>
+        <input type="date" id="dob1">
+
+        <label for="address1">Adres:</label>
+        <input type="text" id="address1">
+
+        <label for="postcode1">Postcode:</label>
+        <input type="text" id="postcode1">
+
+        <label for="city1">Woonplaats:</label>
+        <input type="text" id="city1">
+    </div>
+
+    <div class="guest" id="guest4">
+        <h3>Huurder 4</h3>
+      <label for="gender1">Geslacht:</label>
+        <select id="gender1">
+            <option value="man">Man</option>
+            <option value="vrouw">Vrouw</option>
+        </select>
+
+        <label for="first-name1">Voornaam:</label>
+        <input type="text" id="first-name1">
+
+        <label for="last-name1">Achternaam:</label>
+        <input type="text" id="last-name1">
+
+        <label for="dob1">Geboortedatum:</label>
+        <input type="date" id="dob1">
+
+        <label for="address1">Adres:</label>
+        <input type="text" id="address1">
+
+        <label for="postcode1">Postcode:</label>
+        <input type="text" id="postcode1">
+
+        <label for="city1">Woonplaats:</label>
+        <input type="text" id="city1">
+    </div>
+      </div>
+
+        <!-- Hoofdhuurder Informatie -->
+        <h3>Hoofdhuurder Informatie</h3>
+        <label for="primary-phone">Telefoonnummer:</label>
+        <input type="tel" id="primary-phone" name="primary-phone" placeholder="Telefoonnummer" required>
+
+        <label for="primary-email">E-mail:</label>
+        <input type="email" id="primary-email" name="primary-email" placeholder="E-mail" required>
+
+        <label for="primary-iban">IBAN:</label>
+        <input type="text" id="primary-iban" name="primary-iban" placeholder="IBAN" required>
+
+        <label for="primary-license">Kenteken Auto:</label>
+        <input type="text" id="primary-license" name="primary-license" placeholder="Kenteken" required>
+
+        <!-- Verblijf Informatie -->
+        <h3>Verblijf Informatie</h3>
+        <label for="start-date">Startdatum verblijf:</label>
+        <input type="date" id="start-date" name="start-date" required>
+
+        <label for="num-weeks">Aantal weken (max 3):</label>
+        <input type="number" id="num-weeks" name="num-weeks" min="1" max="3" required>
+
+        <!-- Extra Opties -->
+        <h3>Extra Opties</h3>
+        <label for="bedding">Aantal setjes beddengoed:</label>
+        <select id="bedding" name="bedding">
+            <option value="0">Geen</option>
+            <option value="1">1 set - €10,00</option>
+            <option value="2">2 sets - €20,00</option>
+            <option value="3">3 sets - €30,00</option>
+            <option value="4">4 sets - €40,00</option>
+        </select>
+
+        <label for="towels">Aantal setjes handdoeken:</label>
+        <select id="towels" name="towels">
+            <option value="0">Geen</option>
+            <option value="1">1 set - €5,00</option>
+            <option value="2">2 sets - €10,00</option>
+            <option value="3">3 sets - €15,00</option>
+        </select>
+
+        <label for="kitchen">Aantal setjes keukentextiel:</label>
+        <select id="kitchen" name="kitchen">
+            <option value="0">Geen</option>
+            <option value="1">1 set - €5,00</option>
+            <option value="2">2 sets - €10,00</option>
+            <option value="3">3 sets - €15,00</option>
+        </select>
+
+        <label for="car">Auto op het park:</label>
+        <input type="checkbox" id="car" name="car" value="yes"> Ja, ik wil de auto op het park.
+
+        <!-- Submit Button -->
+        <button type="submit" id="send-btn">Verstuur Reservering</button>
+    </form>
+</div>
 </div>
     
 
