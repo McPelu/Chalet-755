@@ -1,10 +1,6 @@
-/* ===============================
-   CSS OPSCHONEN EN OPTIMALISEREN
-   =============================== */
+/* ===============================   CSS OPSCHONEN EN OPTIMALISEREN   =============================== */
 
-/* -------------------------------
-   Variabelen voor kleuren
---------------------------------- */
+/* -------------------------------   Variabelen voor kleuren--------------------------------- */
 :root {
     --primary-color: #2196F3;
     --secondary-color: #4CAF50;
@@ -14,9 +10,7 @@
     --tab-bg: #f4f4f4;
 }
 
-/* -------------------------------
-   Algemene instellingen
---------------------------------- */
+/* -------------------------------   Algemene instellingen--------------------------------- */
 html, body {
     height: 100%;
     margin: 0;
@@ -37,9 +31,7 @@ img {
     margin-bottom: 20px;
 }
 
-/* -------------------------------
-   Header
---------------------------------- */
+/* -------------------------------   Header--------------------------------- */
 header {
     background-color: var(--primary-color);
     color: #fff;
@@ -65,9 +57,7 @@ header nav ul li a {
     text-decoration: none;
 }
 
-/* -------------------------------
-   Sections & general containers
---------------------------------- */
+/* -------------------------------   Sections & general containers--------------------------------- */
 section, .form-container, .tab-content, .cost-info {
     background-color: #fff;
     border-radius: 8px;
@@ -76,17 +66,12 @@ section, .form-container, .tab-content, .cost-info {
     margin: 20px auto;
 }
 
-section {
-    /* extra styling als nodig */
-}
-
 .tab-content {
     display: none;
-    width: 90%; /* vult 90% van het scherm */
-    max-width: 900px; /* niet te breed op desktop */
-    min-height: calc(100vh - 160px); /* header + footer rekening gehouden */
+    width: 90%;
+    max-width: 900px;
+    min-height: calc(100vh - 160px); /* rekening houdend met header + footer */
     padding: 20px;
-    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
@@ -95,9 +80,7 @@ section {
     display: block;
 }
 
-/* -------------------------------
-   Tab styling
---------------------------------- */
+/* -------------------------------   Tab styling--------------------------------- */
 .tabs {
     display: flex;
     justify-content: space-around;
@@ -121,20 +104,20 @@ section {
     color: #fff;
 }
 
-/* -------------------------------
-   Form styling
---------------------------------- */
+/* -------------------------------   Form styling--------------------------------- */
 .form-container {
     width: 100%;
     max-width: 500px; /* smaller formulier */
     margin: 0 auto;   /* centreert het formulier */
 }
 
-.form-container input, 
-.form-container select, 
+.form-container input,
+.form-container select,
 .form-container button,
-#start-date, #num-weeks, #num-persons {
-    width: 100%;  /* vult container */
+#start-date,
+#num-weeks,
+#num-persons {
+    width: 30%;  /* vult container */
     padding: 8px;
     font-size: 16px;
     border: 1px solid #ccc;
@@ -161,9 +144,7 @@ section {
     background-color: #45a049;
 }
 
-/* -------------------------------
-   Guests form (responsive grid)
---------------------------------- */
+/* -------------------------------   Guests form (responsive grid)--------------------------------- */
 .guests-form {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -194,9 +175,34 @@ section {
     box-sizing: border-box;
 }
 
-/* -------------------------------
-   Cost info styling
---------------------------------- */
+/* -------------------------------   Extra Opties Styling --------------------------------- */
+.extra-options .form-row {
+    margin-bottom: 8px; /* kleine ruimte tussen de pulldowns */
+}
+
+/* Verstuur knop onderaan met extra ruimte */
+.submit-row {
+    margin-top: 20px; /* ruimte boven de knop */
+    display: flex;
+    justify-content: flex-start; /* links uitlijnen, kan ook center of right */
+}
+
+.submit-row button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.submit-row button:hover {
+    background-color: #45a049;
+}
+
+/* -------------------------------   Cost info styling--------------------------------- */
 .cost-info {
     max-width: 500px;
     padding: 20px;
@@ -224,9 +230,7 @@ section {
     border-bottom: 1px solid #ddd;
 }
 
-/* -------------------------------
-   Footer
---------------------------------- */
+/* -------------------------------   Footer--------------------------------- */
 footer {
     background-color: var(--footer-bg);
     color: #fff;
@@ -236,9 +240,7 @@ footer {
     width: 100%;
 }
 
-/* -------------------------------
-   Inputs algemene styling
---------------------------------- */
+/* -------------------------------   Inputs algemene styling--------------------------------- */
 input[type="number"], input[type="date"] {
     width: 100%;
     padding: 8px;
@@ -249,9 +251,7 @@ input[type="number"], input[type="date"] {
     box-sizing: border-box;
 }
 
-/* -------------------------------
-   Algemeen
---------------------------------- */
+/* -------------------------------   Algemeen--------------------------------- */
 button {
     padding: 10px;
     font-size: 16px;
