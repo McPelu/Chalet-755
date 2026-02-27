@@ -73,3 +73,43 @@ document.getElementById("calculate-btn").addEventListener("click", function() {
     document.getElementById("total-cost").innerHTML = `Totaalbedrag: €${finalCost.toFixed(2)}`;
     document.getElementById("cost-details").innerHTML = summary;
 });
+
+// Functie om de adresgegevens van Huurder 1 naar de andere huurders te kopiëren
+function copyAddressToOtherGuests(guestNumber) {
+    const address1 = document.getElementById("address1").value;
+    const postcode1 = document.getElementById("postcode1").value;
+    const city1 = document.getElementById("city1").value;
+
+    if (guestNumber === 2) {
+        if (document.getElementById("copy-address2").checked) {
+            document.getElementById("address2").value = address1;
+            document.getElementById("postcode2").value = postcode1;
+            document.getElementById("city2").value = city1;
+        }
+    }
+    if (guestNumber === 3) {
+        if (document.getElementById("copy-address3").checked) {
+            document.getElementById("address3").value = address1;
+            document.getElementById("postcode3").value = postcode1;
+            document.getElementById("city3").value = city1;
+        }
+    }
+    if (guestNumber === 4) {
+        if (document.getElementById("copy-address4").checked) {
+            document.getElementById("address4").value = address1;
+            document.getElementById("postcode4").value = postcode1;
+            document.getElementById("city4").value = city1;
+        }
+    }
+}
+
+// Event listeners voor de checkboxes van de huurders
+document.getElementById("copy-address2").addEventListener("change", function() {
+    copyAddressToOtherGuests(2);
+});
+document.getElementById("copy-address3").addEventListener("change", function() {
+    copyAddressToOtherGuests(3);
+});
+document.getElementById("copy-address4").addEventListener("change", function() {
+    copyAddressToOtherGuests(4);
+});
