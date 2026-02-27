@@ -1,19 +1,25 @@
-document.getElementById("calculate-btn").addEventListener("click", function() {
-    const startDate = new Date(document.getElementById("start-date").value);
-    const numWeeks = parseInt(document.getElementById("num-weeks").value);
-    const numPersons = parseInt(document.getElementById("num-persons").value);
+// ================================
+// Berekening totaalprijs – Kosten tab
+// ================================
 
-    // Extra opties voor setjes
-    const beddingCost = parseInt(document.getElementById("bedding").value); // Beddengoed kosten per set
-    const towelsCost = parseInt(document.getElementById("towels").value); // Handdoeken kosten per set
-    const kitchenCost = parseInt(document.getElementById("kitchen").value); // Keukentextiel kosten per set
-    const carChecked = document.getElementById("car").checked; // Auto op het park (checkbox)
-    
-    if (!startDate || !numWeeks || !numPersons || numWeeks <= 0 || numPersons <= 0) {
+document.getElementById("calculate-btn").addEventListener("click", function() {
+    // Startdatum en aantal weken / personen
+    const startDate = new Date(document.getElementById("start-date").value);
+    const numWeeks = parseInt(document.getElementById("num-weeks").value) || 0;
+    const numPersons = parseInt(document.getElementById("num-persons").value) || 0;
+
+    if (!startDate || numWeeks <= 0 || numPersons <= 0) {
         alert("Vul alle velden correct in!");
         return;
     }
 
+    // Extra opties (veilig omzetten naar getal)
+    const beddingCost = parseFloat(document.getElementById("bedding").value) || 0;
+    const towelsCost = parseFloat(document.getElementById("towels").value) || 0;
+    const kitchenCost = parseFloat(document.getElementById("kitchen").value) || 0;
+    const carChecked = document.getElementById("car").checked;
+
+    // Seizoenen met prijzen
     const seasonPrices = [
         { name: "Voorjaar", start: "2026-02-14", end: "2026-03-01", price: 450 },
         { name: "Meivakantie", start: "2025-04-26", end: "2025-05-04", price: 400 },
@@ -21,50 +27,46 @@ document.getElementById("calculate-btn").addEventListener("click", function() {
         { name: "Zomervakantie", start: "2025-07-05", end: "2025-08-31", price: 650 },
         { name: "Herfstvakantie", start: "2025-10-11", end: "2025-10-26", price: 450 },
         { name: "Kerstvakantie", start: "2025-12-20", end: "2026-01-04", price: 450 },
-        { name: "Standaard", price: 400 } // Prijs buiten vakanties
+        { name: "Standaard", price: 400 }
     ];
 
-    // Functie om het seizoen te bepalen op basis van de startdatum
+    // Functie om seizoen te bepalen
     function getSeason(date) {
         for (let season of seasonPrices) {
-            const seasonStart = new Date(season.start);
-            const seasonEnd = new Date(season.end || season.start);
-            if (date >= seasonStart && date <= seasonEnd) {
-                return season;
-            }
+            if (!season.start) continue;
+            const start = new Date(season.start);
+            const end = new Date(season.end || season.start);
+            if (date >= start && date <= end) return season;
         }
-        return seasonPrices.find(season => season.name === "Standaard"); // Standaardprijs
+        return seasonPrices.find(s => s.name === "Standaard");
     }
 
     const startSeason = getSeason(startDate);
-    const totalCost = numWeeks * startSeason.price; // Prijs per week * aantal weken
+    let finalCost = numWeeks * startSeason.price;
 
-    // Bereken de extra kosten
+    // Bereken extra kosten
     const additionalCosts = [
-        { item: "Toeristenbelasting", price: 5.95 * numWeeks * numPersons }, // Per persoon per nacht
+        { item: "Toeristenbelasting", price: 5.95 * numWeeks * numPersons }, // per persoon per week
         { item: "Park Reserveringskosten", price: 9.95 },
         { item: "Eindschoonmaak", price: 30 },
         { item: "Borg", price: 100 },
-        { item: "Beddengoed", price: beddingCost  }, // Kosten beddengoed
-        { item: "Handdoeken", price: towelsCost * numPersons }, // Kosten handdoeken
-        { item: "Keukentextiel", price: kitchenCost  }, // Kosten keukentextiel
+        { item: "Beddengoed", price: beddingCost  },
+        { item: "Handdoeken", price: towelsCost  },
+        { item: "Keukentextiel", price: kitchenCost  }
     ];
 
-    // Auto op het park kosten per dag, alleen als de checkbox is aangevinkt
+    // Auto op het park kosten per dag
     if (carChecked) {
-        const totalDays = numWeeks * 7; // Aantal dagen van het verblijf
-        additionalCosts.push({
-            item: "Auto op het park",
-            price: 6 * totalDays // Kosten auto op het park
-        });
+        const totalDays = numWeeks * 7;
+        additionalCosts.push({ item: "Auto op het park", price: 6 * totalDays });
     }
 
-    let finalCost = totalCost;
+    // Totaalprijs berekenen
     additionalCosts.forEach(cost => {
         finalCost += cost.price;
     });
 
-    // Update de weergegeven totaalprijs
+    // Output overzicht
     let summary = `<strong>${startSeason.name}</strong> prijs per week: €${startSeason.price.toFixed(2)}<br>`;
     additionalCosts.forEach(cost => {
         summary += `${cost.item}: €${cost.price.toFixed(2)}<br>`;
