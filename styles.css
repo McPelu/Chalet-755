@@ -4,7 +4,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    padding-bottom: 60px;
 }
 
 header {
@@ -112,17 +111,14 @@ footer {
     background-color: #333;
     color: white;
 }
+
 .tab-content {
     display: none;
     padding: 20px;
+    border-top: 1px solid #ddd;
     background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-
-    /* NIEUW */
-    min-height: 500px;   /* maak het blok hoger */
-    max-width: 900px;    /* niet over hele pagina */
-    margin: 20px auto;   /* netjes gecentreerd */
+    max-height: 400px;
+    overflow-y: auto;
 }
 
 .tab-content.active {
@@ -270,30 +266,47 @@ footer {
 #calculate-btn:hover {
     background-color: #45a049;
 }
-/* Zorg dat elk label + input bij elkaar hoort */
-.guest-info label {
-    display: inline-block;  /* Label naast input mogelijk maken */
-    width: 150px;           /* Breedte van label */
-    margin-right: 10px;     /* Spacing tussen label en input */
-    text-align: right;      /* Tekst uitlijnen naar rechts */
-    vertical-align: middle; /* Midden uitlijnen met input */
+/* Algemeen layout voor de huurders */
+.guests-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* Vier kolommen naast elkaar */
+    gap: 20px;
+    margin: 20px 0;
 }
 
-/* Input naast label */
-.guest-info input,
-.guest-info select {
-    display: inline-block;
-    width: 200px;           /* Breedte van het invoerveld */
-    margin-bottom: 10px;    /* Ruimte tussen regels */
+/* Iedere huurder krijgt zijn eigen container */
+.guest {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f4f4f4;
 }
 
-/* Voor datums specifiek */
-.guest-info input[type="date"] {
-    width: 200px;  /* evt aanpassen zodat het netjes past */
+/* De labels worden netjes uitgelijnd naast de invoervelden */
+.guest label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
-/* Optioneel: elk veld op een nieuwe regel houden */
-.guest-info h4,
-.guest-info label {
+/* De invoervelden (input, select) krijgen wat ruimte en staan onder de labels */
+.guest input,
+.guest select {
+    width: 100%;
+    padding: 8px;
     margin-top: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Hoofdhuurder info wordt apart gezet onder de huurders */
+.main-tenant {
+    margin-top: 30px;
+}
+
+/* Specifieke styling voor de Hoofdhuurder sectie */
+.main-tenant label {
+    display: block;
+    margin-top: 15px;
 }
